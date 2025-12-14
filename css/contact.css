@@ -296,3 +296,7 @@
         font-size: 3rem;
     }
 }
+/* Fix for overlapping icons */
+.info-block {
+    padding-right: 50px;
+}
