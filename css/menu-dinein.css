@@ -334,3 +334,30 @@
         font-size: 1.5rem;
     }
 }
+
+/* Menu Item Order Button */
+.menu-item-order-btn {
+    display: block;
+    margin-top: 15px;
+    padding: 10px 0;
+    background-color: transparent;
+    border: 1px solid #F5A623;
+    color: #F5A623;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.menu-item-order-btn:hover {
+    background-color: #F5A623;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 166, 35, 0.2);
+}
