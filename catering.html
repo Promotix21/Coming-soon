@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="./assets/tandoor-india-logo.webp">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/catering.css">
+    <link rel="stylesheet" href="css/modal.css">
     <!-- Google Fonts & Libraries -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +53,7 @@
     }
     </script>
 
-</head>
+    </script>
 
 </head>
 <body>
@@ -96,9 +97,6 @@
 
     <!-- ============================================
          CATERING HERO SECTION
-    ============================================ -->
-    <!-- ============================================
-         CATERING HERO SECTION (REDESIGN)
     ============================================ -->
     <section class="about-hero">
         <div class="about-hero-content">
@@ -468,7 +466,7 @@
             <p class="footer-tagline">Fresh. Authentic. Reimagined.</p>
 
             <div class="footer-cta-group">
-                <a href="menu.html" class="footer-cta">Order Online</a>
+                <a href="#order" class="footer-cta js-order-trigger">Order Online</a>
                 <a href="catering.html" class="footer-cta">Book Catering</a>
             </div>
         </div>
@@ -562,7 +560,8 @@
         </ul>
     </div>
 
-    <!-- Main Script -->
+     <!-- Main Script -->
+    <script src="js/ordering.js"></script>
     <script>
         // ============================================
         // DEPENDENCIES SETUP
