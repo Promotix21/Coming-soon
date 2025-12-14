@@ -2193,7 +2193,7 @@
     justify-content: center;
     text-align: center;
     /* Using the requested background image with an overlay */
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/images/2.jpeg');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/2.webp');
     background-size: cover;
     background-position: center;
     padding: 140px 20px 80px;

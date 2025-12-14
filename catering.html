@@ -384,7 +384,8 @@
                     <a href="tel:5105550123" class="phone">(510) 555-0123</a>
                 </div>
 
-                <p>Mon – Sun: 11:00 AM – 10:00 PM</p>
+                <p>Sun – Thu: 10:30 AM – 9:30 PM</p>
+                <p>Fri – Sat: 10:30 AM – 10:00 PM</p>
                 <p><a href="mailto:info@tandoorhayward.com">info@tandoorhayward.com</a></p>
 
                 <!-- Social Media Icons -->
@@ -469,6 +470,63 @@
     <script src="js/main.js"></script>
     <script src="js/catering.js"></script>
     <script src="js/ordering.js"></script>
+
+    <!-- Catering Page Specific Animations -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Celebration Section Pinning - Text stays pinned while image scrolls
+            ScrollTrigger.create({
+                trigger: ".celebration-grid",
+                start: "top top",
+                end: "bottom bottom",
+                pin: ".celebration-content",
+            });
+
+            // All Services Horizontal Scroll
+            const servicesSection = document.querySelector(".all-services");
+            const servicesRight = document.querySelector(".services-right");
+
+            if (servicesSection && servicesRight) {
+                const getScrollAmount = () => {
+                    let servicesWidth = servicesRight.scrollWidth;
+                    let viewportWidth = window.innerWidth;
+                    return -(servicesWidth - viewportWidth);
+                };
+
+                gsap.to(servicesRight, {
+                    x: getScrollAmount,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: ".all-services",
+                        start: "top top",
+                        end: () => `+=${Math.abs(getScrollAmount())}`,
+                        pin: true,
+                        scrub: 1,
+                        invalidateOnRefresh: true,
+                    }
+                });
+            }
+
+            // Scroll To Top Logic
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            if (scrollTopBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 200) {
+                        scrollTopBtn.classList.add('visible');
+                    } else {
+                        scrollTopBtn.classList.remove('visible');
+                    }
+                });
+
+                scrollTopBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
 
     <!-- Scroll To Top Button -->
     <a href="#" class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
