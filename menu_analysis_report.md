@@ -43,6 +43,19 @@
 | Palak Paneer | Palak Paneer | $12.99 | $12.99 | ✅ |
 | Paneer Tikka Masala | Paneer Tikka Masala | $14.99 | $14.99 | ✅ |
 
+## Image Verification Findings
+Comparison of prices visible in the menu images against the Excel/HTML data.
+
+### Discrepancies (Image vs Excel/Report)
+| Item | Image Price | Excel Price | Notes |
+|---|---|---|---|
+| **Fish Pakora (1LB)** | **$16.99** | $15.99 | Image price is higher than Excel. |
+| **Tandoori Fish** | **$16.99** | $15.99 | Image price is higher than Excel. |
+
+### Clarifications
+- **Tandoori Chicken**: Image lists **$7.99/15.99** for Half/Full. The HTML price of $15.99 correctly matches the "Full" price. The warning above identifying it as "Half" with a price mismatch was due to a fuzzy match name collision.
+- **Puri**: HTML has "Puri" at $3.99. Report matched it to "Bhel Puri" ($5.99) with a warning. Image confirms **Poori (2)** is **$3.99**. The HTML "Puri" corresponds to "Poori (2)", not "Bhel Puri".
+
 ## Items in HTML (Not in Excel)
 These items were not found in the Excel file, so their prices were not updated.
 
