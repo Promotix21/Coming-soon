@@ -57,8 +57,8 @@ export default async function handler(req, res) {
         }
 
         const mailOptions = {
-            from: `"Tandoor Website" <no-reply@tandoorhayward.com>`,
-            to: 'Guptamansha1998hsp@gmail.com',
+            from: "Tandoor Website" <no-reply@tandoorhayward.com>",
+            to: 'Guptamansha1998hsp@gmail.com, agent6064@gmail.com',
             subject: mailSubject,
             html: htmlContent,
             replyTo: email
