@@ -1398,7 +1398,7 @@
 }
 
 .rating-box .stars {
-    color: #F5A623;
+    color: #d48806;
     font-size: 1.2rem;
     letter-spacing: 2px;
 }
@@ -1475,7 +1475,7 @@
 }
 
 .review-card .review-stars {
-    color: #F5A623;
+    color: #d48806;
     font-size: 1rem;
     letter-spacing: 2px;
 }
@@ -1528,18 +1528,18 @@
 }
 
 .cta-link {
-    color: var(--saffron-orange);
+    color: #d48806;
     font-weight: 600;
     text-decoration: none;
     font-size: 1.1rem;
-    border-bottom: 2px solid var(--saffron-orange);
+    border-bottom: 2px solid #d48806;
     padding-bottom: 2px;
     transition: all 0.3s ease;
 }
 
 .cta-link:hover {
-    color: #d48806;
-    border-color: #d48806;
+    color: #F5A623;
+    border-color: #F5A623;
 }
 
 /* Responsive */
