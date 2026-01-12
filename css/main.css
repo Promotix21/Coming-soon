@@ -1238,6 +1238,7 @@ html.lenis body {
     line-height: 1.75;
     color: rgba(255, 248, 231, 0.85);
     margin-bottom: 2.5rem;
+    word-spacing: normal;
     font-weight: 300;
 }
 
@@ -1491,8 +1492,6 @@ html.lenis body {
 .ChooseUs-header {
     text-align: center;
     margin-bottom: 60px;
-    word-spacing: -0.2em !important;
-    letter-spacing: -0.02em;
 }
 
 .ChooseUs-header h1 {
@@ -1501,6 +1500,7 @@ html.lenis body {
     letter-spacing: -0.05em;
     margin-bottom: 10px;
     line-height: 1.2;
+    word-spacing: -0.2em !important;
 }
 
 .ChooseUs-header .subtitle {
@@ -1599,16 +1599,15 @@ html.lenis body {
 .catering-header {
     text-align: center;
     margin-bottom: 60px;
-    word-spacing: -0.2em !important;
-    letter-spacing: -0.02em;
 }
 
 .catering-header h1 {
     font-size: 4rem;
     font-weight: 400;
-    letter-spacing: 2px;
+    letter-spacing: -0.05em;
     margin-bottom: 10px;
     line-height: 1.2;
+    word-spacing: -0.2em !important;
 }
 
 .catering-header .subtitle {
