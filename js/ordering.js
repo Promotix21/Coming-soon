@@ -5,12 +5,56 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="modal-overlay" id="orderModal">
             <div class="modal-content">
                 <button class="modal-close">&times;</button>
-                <h2 class="modal-title">Order Online</h2>
+                <h2 class="modal-title">Select Delivery Partner</h2>
                 <div class="modal-options">
-                    <a href="https://order.tandoorhayward.com/pickup" class="modal-btn" target="_blank">Pickup</a>
-                    <a href="https://order.tandoorhayward.com/delivery" class="modal-btn" target="_blank">Delivery</a>
-                    <!-- Fallback generic link if specific ones aren't ready -->
-                    <!-- <a href="order.html" class="modal-btn">View Menu</a> -->
+                    <!-- 1. Grubhub -->
+                    <a href="#" class="delivery-card" target="_blank">
+                        <div class="partner-name">Grubhub</div>
+                        <div class="partner-fees">Service fee 5%–15% · No delivery fee</div>
+                        <div class="partner-time">Delivers in 25 min</div>
+                    </a>
+
+                    <!-- 2. Online Ordering by DoorDash -->
+                    <a href="#" class="delivery-card" target="_blank">
+                        <div class="partner-name">DoorDash</div>
+                        <div class="partner-fees">Service fee 10% · Delivery fee $3.99</div>
+                        <div class="partner-time">Delivers in 32 min</div>
+                    </a>
+
+                    <!-- 3. Seamless -->
+                    <a href="#" class="delivery-card" target="_blank">
+                        <div class="partner-name">Seamless</div>
+                        <div class="partner-fees">Service fee 5%–15% · No delivery fee</div>
+                        <div class="partner-time">Delivers in 25 min</div>
+                    </a>
+
+                    <!-- 4. DoorDash -->
+                    <a href="#" class="delivery-card" target="_blank">
+                        <div class="partner-name">DoorDash</div>
+                        <div class="partner-fees">Service fee 15% · Delivery fees start at $2.99</div>
+                        <div class="partner-time">Delivers in 25 min</div>
+                    </a>
+
+                    <!-- 5. Caviar -->
+                    <a href="#" class="delivery-card" target="_blank">
+                        <div class="partner-name">Caviar</div>
+                        <div class="partner-fees">Service fee 15% · Delivery fees start at $2.99</div>
+                        <div class="partner-time">Delivers in 25 min</div>
+                    </a>
+
+                    <!-- 6. Uber Eats -->
+                    <a href="#" class="delivery-card" target="_blank">
+                        <div class="partner-name">Uber Eats</div>
+                        <div class="partner-fees">Service fee 5%–15% · Delivery fees start at $0.50</div>
+                        <div class="partner-time">Delivers in 17–32 min</div>
+                    </a>
+
+                    <!-- 7. Postmates -->
+                    <a href="#" class="delivery-card" target="_blank">
+                        <div class="partner-name">Postmates</div>
+                        <div class="partner-fees">Fees may apply</div>
+                        <div class="partner-time">Delivers in 17–32 min</div>
+                    </a>
                 </div>
             </div>
         </div>
