@@ -15,12 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const formData = new FormData(form);
         const data = {
-            type: 'catering', // Identifier for backend
-            name: formData.get('name'),
+            formType: 'Catering', // Identifier for backend
+            firstName: formData.get('name'),
             email: formData.get('email'),
             phone: formData.get('phone'),
-            date: formData.get('date'),
-            guests: formData.get('guests'),
+            eventDate: formData.get('date'),
+            guestCount: formData.get('guests'),
             eventType: formData.get('eventType'),
             message: formData.get('message')
         };

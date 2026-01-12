@@ -12,14 +12,14 @@ export default async function handler(req, res) {
         return res.status(400).json({ success: false, message: 'Missing required fields' });
     }
 
-    // Configure Transporter (Use Environment Variables in Vercel)
+    // Configure Transporter with provided SMTP2GO credentials
     const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
-        port: process.env.SMTP_PORT,
-        secure: process.env.SMTP_PORT == 465, // true for 465, false for other ports
+        host: "mail.smtp2go.com",
+        port: 2525,
+        secure: false, // true for 465, false for other ports
         auth: {
-            user: process.env.SMTP_USER,
-            pass: process.env.SMTP_PASS,
+            user: "tandoorhayward",
+            pass: "KkHhw0is7DHJbLIC",
         },
     });
 
@@ -57,8 +57,8 @@ export default async function handler(req, res) {
         }
 
         const mailOptions = {
-            from: process.env.SMTP_FROM || `"Tandoor Website" <${process.env.SMTP_USER}>`,
-            to: process.env.SMTP_TO || 'management@tandoorhayward.com', // Default fallback, override in env
+            from: `"Tandoor Website" <no-reply@tandoorhayward.com>`,
+            to: 'Guptamansha1998hsp@gmail.com',
             subject: mailSubject,
             html: htmlContent,
             replyTo: email
