@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     <!-- 2. Online Ordering by DoorDash -->
                     <a href="#" class="delivery-card" target="_blank">
-                        <div class="partner-name">DoorDash</div>
+                        <div class="partner-name">Online Ordering by DoorDash</div>
                         <div class="partner-fees">Service fee 10% · Delivery fee $3.99</div>
                         <div class="partner-time">Delivers in 32 min</div>
                     </a>
