@@ -4,20 +4,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms & Conditions - Tandoor Indian Restaurant</title>
+    <title>Terms & Conditions | Tandoor Indian Restaurant</title>
+
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="./assets/tandoor-india-logo.webp">
     <link rel="apple-touch-icon" href="./assets/tandoor-india-logo.webp">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Pinyon+Script&display=swap"
+        rel="stylesheet">
+
+    <!-- Core CSS -->
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/legal.css">
 </head>
 
 <body>
-    <div class="about-hero" style="min-height: 50vh;">
-        <h1 class="about-hero-title">Terms & Conditions</h1>
-        <p class="about-hero-subtitle">Please read our terms carefully.</p>
-        <a href="index.html" class="btn btn-primary" style="margin-top: 2rem;">Return Home</a>
+    <!-- Header / Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <ul class="nav-left">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <a href="index.html" class="logo">
+                <img src="./assets/images/logo (2).webp" alt="Tandoor Indian Restaurant" class="logo-img">
+            </a>
+            <ul class="nav-right">
+                <li><a href="catering.html">Catering</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="menu-overlay"></div>
+
+    <section class="terms-hero">
+        <h1>Terms & Conditions</h1>
+        <p>Last updated: January 2026</p>
+    </section>
+
+    <div class="terms-content">
+        <section class="terms-section">
+            <p>Welcome to the Tandoor Indian Restaurant website (the "Site"). By accessing or using our Site, you agree
+                to be bound by these Terms and Conditions ("Terms"). If you do not agree with any part of these Terms,
+                you must not use our Site.</p>
+        </section>
+
+        <section class="terms-section">
+            <h2>1. Use of Website</h2>
+            <p>The content provided on this Site is for general information and use only. It is subject to change
+                without notice. We grant you a limited, non-exclusive, non-transferable license to access and use the
+                Site for personal, non-commercial purposes, such as viewing our menu, making reservations, or inquiring
+                about catering services.</p>
+        </section>
+
+        <section class="terms-section">
+            <h2>2. Intellectual Property</h2>
+            <p>All content on this Site, including but not limited to text, graphics, logos, images, and software, is
+                the property of Tandoor Indian Restaurant or its content suppliers and is protected by copyright and
+                other intellectual property laws. You may not reproduce, distribute, modify, or create derivative works
+                from any material on this Site without our prior written consent.</p>
+        </section>
+
+        <section class="terms-section">
+            <h2>3. User Submissions</h2>
+            <p>Any information, feedback, or materials you submit to us via the Site (e.g., through contact or catering
+                forms) will be considered non-confidential and non-proprietary to you, except as outlined in our Privacy
+                Policy. You agree that any information you provide is accurate, current, and complete.</p>
+        </section>
+
+        <section class="terms-section">
+            <h2>4. Limitation of Liability</h2>
+            <p>Tandoor Indian Restaurant shall not be liable for any direct, indirect, incidental, special, or
+                consequential damages resulting from the use or inability to use this Site, or for the cost of
+                procurement of substitute goods and services, even if we have been advised of the possibility of such
+                damages.</p>
+        </section>
+
+        <section class="terms-section">
+            <h2>5. External Links</h2>
+            <p>Our Site may contain links to third-party websites (e.g., social media platforms, delivery partners). We
+                have no control over the content and practices of these sites and accept no responsibility for them.
+                Your
+                use of third-party websites is at your own risk and subject to their terms of use.</p>
+        </section>
+
+        <section class="terms-section">
+            <h2>6. Governing Law</h2>
+            <p>These Terms shall be governed by and construed in accordance with the laws of the State of California, in
+                the United States of America, without regard to its conflict of law provisions.</p>
+        </section>
+
+        <section class="terms-section">
+            <h2>7. Contact Us</h2>
+            <p>If you have any questions about these Terms & Conditions, please contact us:</p>
+            <div class="contact-info">
+                <p><strong>Tandoor Indian Restaurant</strong><br>
+                    27167 Mission Blvd, Hayward, CA 94544<br>
+                    Email: info@tandoorhayward.com<br>
+                    Phone: (510) 885-1212</p>
+            </div>
+        </section>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-hero">
+            <h2 class="footer-brand"><img src="./assets/images/logo (2).webp" alt="Tandoor Indian Restaurant"
+                    class="footerLogo-img"></h2>
+            <p class="footer-tagline">Fresh. Authentic. Reimagined.</p>
+            <div class="footer-cta-group">
+                <a href="#order" class="footer-cta js-order-trigger">Order Online</a>
+                <a href="catering.html#request" class="footer-cta">Book Catering</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-left">
+                <p>&copy; 2026 Tandoor Indian Restaurant</p>
+            </div>
+            <div class="footer-right">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main Script -->
+    <script src="js/main.js"></script>
+    <script src="js/ordering.js"></script>
 </body>
 
 </html>
