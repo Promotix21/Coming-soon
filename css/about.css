@@ -481,7 +481,7 @@
 
 .people-text {
     font-family: var(--font-sans);
-    font-size: 1rem;
+    font-size: 1.5rem;
     max-width: 450px;
     line-height: 1.8;
     color: rgba(255, 248, 231, 0.9);
@@ -622,17 +622,17 @@
 }
 
 .about-testimonial .review-source {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--about-text-muted);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #333;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .about-testimonial .review-text {
-    font-size: 1.05rem;
+    font-size: 1.3rem;
     line-height: 1.7;
-    color: var(--about-text-muted);
+    color: #000000;
     font-style: italic;
     margin-bottom: 24px;
     flex-grow: 1;
