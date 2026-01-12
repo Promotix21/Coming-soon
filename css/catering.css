@@ -1,6 +1,4 @@
-﻿@import url('modal.css');
-
-/* ============================================
+﻿/* ============================================
    CATERING INQUIRY FORM
 ============================================ */
 .catering-inquiry {
@@ -1313,103 +1311,7 @@
 }
 
 /* Modal */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
-}
-
-.modal-overlay.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.modal-content {
-    background: white;
-    width: 90%;
-    max-width: 500px;
-    border-radius: 16px;
-    padding: 2rem;
-    position: relative;
-    transform: translateY(20px);
-    transition: transform 0.3s;
-}
-
-.modal-overlay.active .modal-content {
-    transform: translateY(0);
-}
-
-.modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #666;
-}
-
-.modal-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-}
-
-.modal-desc {
-    color: #666;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-}
-
-.modal-price {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-gold);
-    margin-bottom: 2rem;
-}
-
-.modal-controls {
-    display: flex;
-    gap: 1rem;
-}
-
-.quantity-selector {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.quantity-selector button {
-    background: #f9f9f9;
-    border: none;
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-
-.quantity-selector button:hover {
-    background: #eee;
-}
-
-.quantity-selector span {
-    width: 40px;
-    text-align: center;
-    font-weight: 600;
-}
+/* Modal Styles Removed to avoid conflict with global modal.css */
 
 /* Mobile Cart Button */
 .mobile-cart-btn {
