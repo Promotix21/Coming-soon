@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('cateringForm');
+    if (!form) return;
+
     const submitBtn = form.querySelector('.submit-btn');
     const formMessage = form.querySelector('.form-message');
-
-    if (!form) return;
 
     form.addEventListener('submit', async function (e) {
         e.preventDefault();
