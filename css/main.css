@@ -985,6 +985,8 @@ html.lenis body {
     line-height: 1.25;
     color: var(--cream);
     max-width: 900px;
+    word-spacing: -0.2em !important;
+    letter-spacing: -0.02em;
 }
 
 .letter {
@@ -1227,6 +1229,8 @@ html.lenis body {
     line-height: 1.15;
     margin-bottom: 1.5rem;
     color: var(--cream);
+    word-spacing: -0.2em !important;
+    letter-spacing: -0.02em;
 }
 
 .about-description {
@@ -1487,12 +1491,14 @@ html.lenis body {
 .ChooseUs-header {
     text-align: center;
     margin-bottom: 60px;
+    word-spacing: -0.2em !important;
+    letter-spacing: -0.02em;
 }
 
 .ChooseUs-header h1 {
     font-size: 4rem;
     font-weight: 400;
-    letter-spacing: 2px;
+    letter-spacing: -0.05em;
     margin-bottom: 10px;
     line-height: 1.2;
 }
@@ -1593,6 +1599,8 @@ html.lenis body {
 .catering-header {
     text-align: center;
     margin-bottom: 60px;
+    word-spacing: -0.2em !important;
+    letter-spacing: -0.02em;
 }
 
 .catering-header h1 {
@@ -1709,6 +1717,7 @@ html.lenis body {
     font-weight: 400;
     letter-spacing: 1px;
     line-height: 1.2;
+    text-align: left;
 }
 
 .rating-box {
