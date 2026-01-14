@@ -279,12 +279,38 @@ document.addEventListener('DOMContentLoaded', () => {
     // Newsletter Form
     const newsletterForm = document.querySelector('.newsletter-form');
     if (newsletterForm) {
-        newsletterForm.addEventListener('submit', (e) => {
+        newsletterForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const emailInput = document.querySelector('.newsletter-input');
-            if (emailInput) {
-                alert(`Thanks for subscribing with ${emailInput.value}! (This is a demo)`);
-                emailInput.value = '';
+            const submitBtn = newsletterForm.querySelector('.newsletter-submit');
+
+            if (emailInput && emailInput.value) {
+                const originalBtnText = submitBtn.textContent;
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Subscribing...';
+
+                try {
+                    const response = await fetch('/api/newsletter', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email: emailInput.value })
+                    });
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        alert(result.message || 'Thank you for subscribing to our newsletter!');
+                        emailInput.value = '';
+                    } else {
+                        alert(result.message || 'Something went wrong. Please try again.');
+                    }
+                } catch (error) {
+                    console.error('Newsletter subscription error:', error);
+                    alert('Unable to subscribe. Please try again later.');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                }
             }
         });
     }
