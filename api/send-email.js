@@ -40,7 +40,7 @@ export default async function handler(req, res) {
             </style>
         `;
 
-        const logoUrl = 'https://tandoorhayward.com/assets/tandoor-india-logo.webp';
+        const logoUrl = 'https://www.tandoorhayward.com/assets/images/logo%20(2).webp';
 
         // Construct Email Content based on Form Type
         let mailSubject = `New Website Inquiry: ${subject || 'No Subject'}`;
