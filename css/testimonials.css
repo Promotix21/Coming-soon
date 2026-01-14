@@ -182,11 +182,11 @@
     border-bottom: 2px solid #d48806;
     padding-bottom: 2px;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .cta-link:hover {
-    color: #F5A623;
-    border-color: #F5A623;
+    transform: scale(1.05);
 }
 
 /* Responsive */

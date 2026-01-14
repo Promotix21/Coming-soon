@@ -299,14 +299,44 @@ document.addEventListener('DOMContentLoaded', () => {
                     const result = await response.json();
 
                     if (result.success) {
-                        alert(result.message || 'Thank you for subscribing to our newsletter!');
+                        if (typeof Swal !== 'undefined') {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Thank You!',
+                                text: result.message || 'Thank you for subscribing to our newsletter!',
+                                confirmButtonColor: '#d48806',
+                                confirmButtonText: 'Great!'
+                            });
+                        } else {
+                            alert(result.message || 'Thank you for subscribing to our newsletter!');
+                        }
                         emailInput.value = '';
                     } else {
-                        alert(result.message || 'Something went wrong. Please try again.');
+                        if (typeof Swal !== 'undefined') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: result.message || 'Something went wrong. Please try again.',
+                                confirmButtonColor: '#d48806',
+                                confirmButtonText: 'Try Again'
+                            });
+                        } else {
+                            alert(result.message || 'Something went wrong. Please try again.');
+                        }
                     }
                 } catch (error) {
                     console.error('Newsletter subscription error:', error);
-                    alert('Unable to subscribe. Please try again later.');
+                    if (typeof Swal !== 'undefined') {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Connection Error',
+                            text: 'Unable to subscribe. Please try again later.',
+                            confirmButtonColor: '#d48806',
+                            confirmButtonText: 'OK'
+                        });
+                    } else {
+                        alert('Unable to subscribe. Please try again later.');
+                    }
                 } finally {
                     submitBtn.disabled = false;
                     submitBtn.textContent = originalBtnText;

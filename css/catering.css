@@ -1049,11 +1049,12 @@
     color: #2c2c2c;
     text-decoration: underline;
     font-size: 1rem;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .cta-link:hover {
-    color: #000;
+    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
@@ -1535,11 +1536,11 @@
     border-bottom: 2px solid #d48806;
     padding-bottom: 2px;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .cta-link:hover {
-    color: #F5A623;
-    border-color: #F5A623;
+    transform: scale(1.05);
 }
 
 /* Responsive */

@@ -681,11 +681,11 @@
     border-bottom: 2px solid var(--about-accent);
     padding-bottom: 3px;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .about-testimonial .cta-link:hover {
-    color: #d48806;
-    border-color: #d48806;
+    transform: scale(1.05);
 }
 
 /* ============================================
