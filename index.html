@@ -44,15 +44,31 @@
     </script>
 
 
+    <!-- Local Business Schema / SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Restaurant",
+      "@id": "https://www.tandoorhayward.com/#restaurant",
       "name": "Tandoor Indian Restaurant",
-      "image": "https://tandoorhayward.com/assets/tandoor-india-logo.webp",
-      "@id": "",
-      "url": "https://tandoorhayward.com",
-      "telephone": "(510)-885-1212",
+      "alternateName": "Tandoor India Hayward",
+      "description": "Authentic Indian restaurant in Hayward, CA serving traditional tandoori dishes, curries, biryani, and vegetarian options. Family-owned since 1998.",
+      "image": [
+        "https://www.tandoorhayward.com/assets/images/logo%20(2).webp",
+        "https://www.tandoorhayward.com/assets/tandoor-india-logo.webp"
+      ],
+      "logo": "https://www.tandoorhayward.com/assets/images/logo%20(2).webp",
+      "url": "https://www.tandoorhayward.com",
+      "telephone": "+15108851212",
+      "email": "Tandoorihayward@gmail.com",
+      "priceRange": "$$",
+      "servesCuisine": [
+        "Indian",
+        "Tandoori",
+        "North Indian",
+        "Vegetarian",
+        "Vegan"
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "27167 Mission Blvd",
@@ -63,10 +79,50 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 37.6400,
-        "longitude": -122.0600
+        "latitude": 37.640000,
+        "longitude": -122.060000
       },
-      "priceRange": "$$"
+      "hasMap": "https://www.google.com/maps?cid=10435069729834094431",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+          "opens": "10:30",
+          "closes": "21:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Friday", "Saturday"],
+          "opens": "10:30",
+          "closes": "22:00"
+        }
+      ],
+      "menu": "https://www.tandoorhayward.com/menu.html",
+      "acceptsReservations": "True",
+      "paymentAccepted": "Cash, Credit Card, Debit Card",
+      "currenciesAccepted": "USD",
+      "sameAs": [
+        "https://www.instagram.com/tandoor__indian__restaurant/",
+        "https://www.facebook.com/people/Tandoor-Indian-Restaurant/61568200572729/"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "2376",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "potentialAction": {
+        "@type": "OrderAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.tandoorhayward.com/menu.html",
+          "actionPlatform": [
+            "http://schema.org/DesktopWebPlatform",
+            "http://schema.org/MobileWebPlatform"
+          ]
+        }
+      }
     }
     </script>
 

@@ -1,0 +1,19 @@
+# Robots.txt for Tandoor Indian Restaurant
+# https://www.tandoorhayward.com
+
+User-agent: *
+Allow: /
+
+# Disallow API endpoints
+Disallow: /api/
+
+# Disallow admin or private areas (if any)
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.claude/
+
+# Sitemap location
+Sitemap: https://www.tandoorhayward.com/sitemap.xml
+
+# Crawl delay (optional, helps prevent server overload)
+Crawl-delay: 1
