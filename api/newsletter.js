@@ -80,7 +80,7 @@ export default async function handler(req, res) {
                 <body>
                     <div class="container">
                         <div class="header">
-                            <img src="https://www.tandoorhayward.com/assets/images/logo%20(2).webp" alt="Tandoor India" class="logo">
+                            <img src="https://www.tandoorhayward.com/assets/tandoor-india-logo.webp" alt="Tandoor India" class="logo">
                         </div>
                         <div class="content">
                             <h2 style="color: #8B0000;">🎉 New Newsletter Subscription</h2>
