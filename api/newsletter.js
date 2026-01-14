@@ -1,6 +1,4 @@
 import nodemailer from 'nodemailer';
-import fs from 'fs';
-import path from 'path';
 
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
@@ -29,7 +27,8 @@ export default async function handler(req, res) {
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit',
-        hour12: false
+        hour12: true,
+        timeZone: 'America/Los_Angeles'
     });
 
     // Get location from request headers (IP-based approximation)
@@ -37,22 +36,7 @@ export default async function handler(req, res) {
     const userAgent = req.headers['user-agent'] || 'Unknown';
     const location = `IP: ${ip}`;
 
-    // CSV file path
-    const csvPath = path.join('/tmp', 'newsletter-subscriptions.csv');
-
-    // Prepare CSV row
-    const csvRow = `"${email}","${dateStr}","${location}","${userAgent}"\n`;
-
     try {
-        // Check if CSV file exists, if not create with headers
-        if (!fs.existsSync(csvPath)) {
-            const csvHeaders = '"Email","Date","Location","User Agent"\n';
-            fs.writeFileSync(csvPath, csvHeaders, 'utf8');
-        }
-
-        // Append new subscription to CSV
-        fs.appendFileSync(csvPath, csvRow, 'utf8');
-
         // Configure SMTP Transporter
         const transporter = nodemailer.createTransport({
             host: "mail.smtp2go.com",
@@ -64,10 +48,7 @@ export default async function handler(req, res) {
             },
         });
 
-        // Read CSV file content
-        const csvContent = fs.readFileSync(csvPath, 'utf8');
-
-        // Email to Business with CSV attachment
+        // Email to Business - No CSV attachment (Vercel serverless doesn't support persistent storage)
         const mailOptions = {
             from: '"Tandoor Website" <noreply@tandoorhayward.com>',
             to: 'Tandoorihayward@gmail.com, agent6064@gmail.com',
@@ -88,6 +69,7 @@ export default async function handler(req, res) {
                         .label { font-weight: bold; color: #8B0000; }
                         .footer { background: #2c2c2c; color: #ffffff; padding: 20px; text-align: center; font-size: 14px; }
                         .footer a { color: #F5A623; text-decoration: none; }
+                        .note { background: #f0f8ff; padding: 15px; margin: 20px 0; border-left: 4px solid #4682b4; font-size: 14px; }
                     </style>
                 </head>
                 <body>
@@ -96,19 +78,25 @@ export default async function handler(req, res) {
                             <img src="https://tandoorhayward.com/assets/tandoor-india-logo.webp" alt="Tandoor India" class="logo">
                         </div>
                         <div class="content">
-                            <h2 style="color: #8B0000;">New Newsletter Subscription</h2>
+                            <h2 style="color: #8B0000;">🎉 New Newsletter Subscription</h2>
                             <div class="info-box">
                                 <div class="field">
                                     <span class="label">Email:</span> ${email}
                                 </div>
                                 <div class="field">
-                                    <span class="label">Date:</span> ${dateStr}
+                                    <span class="label">Date & Time:</span> ${dateStr} (PST)
                                 </div>
                                 <div class="field">
                                     <span class="label">Location:</span> ${location}
                                 </div>
+                                <div class="field">
+                                    <span class="label">Browser:</span> ${userAgent}
+                                </div>
                             </div>
-                            <p>The complete list of all newsletter subscriptions is attached as a CSV file.</p>
+                            <div class="note">
+                                <strong>💡 Tip:</strong> Save these emails in a dedicated folder to maintain your subscriber list.
+                                You can export them to your email marketing platform (Mailchimp, Constant Contact, etc.) anytime.
+                            </div>
                         </div>
                         <div class="footer">
                             <p>Tandoor India Hayward | <a href="https://tandoorhayward.com">tandoorhayward.com</a></p>
@@ -116,14 +104,7 @@ export default async function handler(req, res) {
                     </div>
                 </body>
                 </html>
-            `,
-            attachments: [
-                {
-                    filename: 'newsletter-subscriptions.csv',
-                    content: csvContent,
-                    contentType: 'text/csv'
-                }
-            ]
+            `
         };
 
         // Send Email to Business
