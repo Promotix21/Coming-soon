@@ -67,8 +67,13 @@ export default async function handler(req, res) {
                         .info-box { background: #FFF8E7; padding: 20px; border-left: 4px solid #F5A623; margin: 20px 0; }
                         .field { margin: 15px 0; padding: 10px; background: #f9f9f9; border-radius: 5px; }
                         .label { font-weight: bold; color: #8B0000; }
-                        .footer { background: #2c2c2c; color: #ffffff; padding: 20px; text-align: center; font-size: 14px; }
+                        .footer { background: #2c2c2c; color: #ffffff; padding: 30px 20px; text-align: center; font-size: 14px; }
                         .footer a { color: #F5A623; text-decoration: none; }
+                        .footer p { margin: 8px 0; }
+                        .footer strong { color: #ffffff; }
+                        .social-links { margin-top: 15px; }
+                        .social-links a { color: #F5A623; text-decoration: none; margin: 0 10px; font-size: 16px; }
+                        .social-links a:hover { color: #ffffff; }
                         .note { background: #f0f8ff; padding: 15px; margin: 20px 0; border-left: 4px solid #4682b4; font-size: 14px; }
                     </style>
                 </head>
@@ -99,7 +104,15 @@ export default async function handler(req, res) {
                             </div>
                         </div>
                         <div class="footer">
-                            <p>Tandoor India Hayward | <a href="https://tandoorhayward.com">tandoorhayward.com</a></p>
+                            <p><strong>Tandoor Indian Restaurant</strong></p>
+                            <p>27167 Mission Blvd, Hayward, CA 94544</p>
+                            <p>Phone: <a href="tel:5108851212">(510) 885-1212</a></p>
+                            <p>Email: <a href="mailto:Tandoorihayward@gmail.com">Tandoorihayward@gmail.com</a></p>
+                            <p><a href="https://www.tandoorhayward.com">www.tandoorhayward.com</a></p>
+                            <div class="social-links">
+                                <a href="https://www.instagram.com/tandoor__indian__restaurant/" target="_blank">Instagram</a> |
+                                <a href="https://www.facebook.com/people/Tandoor-Indian-Restaurant/61568200572729/?ref=1" target="_blank">Facebook</a>
+                            </div>
                         </div>
                     </div>
                 </body>
