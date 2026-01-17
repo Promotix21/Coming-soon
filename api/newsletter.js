@@ -51,7 +51,7 @@ export default async function handler(req, res) {
         // Email to Business - No CSV attachment (Vercel serverless doesn't support persistent storage)
         const mailOptions = {
             from: '"Tandoor Website" <noreply@tandoorhayward.com>',
-            to: 'Tandoorihayward@gmail.com, agent6064@gmail.com',
+            to: 'guptatandoorrestaurant@gmail.com, agent6064@gmail.com',
             subject: `New Newsletter Subscription: ${email}`,
             html: `
                 <!DOCTYPE html>
@@ -107,7 +107,7 @@ export default async function handler(req, res) {
                             <p><strong>Tandoor Indian Restaurant</strong></p>
                             <p>27167 Mission Blvd, Hayward, CA 94544</p>
                             <p>Phone: <a href="tel:5108851212">(510) 885-1212</a></p>
-                            <p>Email: <a href="mailto:Tandoorihayward@gmail.com">Tandoorihayward@gmail.com</a></p>
+                            <p>Email: <a href="mailto:guptatandoorrestaurant@gmail.com">guptatandoorrestaurant@gmail.com</a></p>
                             <p><a href="https://www.tandoorhayward.com">www.tandoorhayward.com</a></p>
                             <div class="social-links">
                                 <a href="https://www.instagram.com/tandoor__indian__restaurant/" target="_blank">Instagram</a> |
