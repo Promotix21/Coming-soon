@@ -439,15 +439,15 @@ document.addEventListener('DOMContentLoaded', () => {
             message: 'Get 15% off your first online order! Use code: WELCOME15',
             ctaText: 'Order Now',
             ctaLink: 'order.php',
-            delaySeconds: 5,
+            delaySeconds: 1,
             // Schedule in LA timezone (America/Los_Angeles)
             schedule: {
                 // Days: 0 = Sunday, 1 = Monday, ... 6 = Saturday
                 days: [0, 1, 2, 3, 4, 5, 6], // All days
-                startHour: 10,  // 10 AM LA time
-                endHour: 21     // 9 PM LA time
+                startHour: 0,  // Show all day
+                endHour: 24     // Show all day
             },
-            showOncePerSession: true
+            showOncePerSession: false
         },
 
         init() {
@@ -462,9 +462,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!this.isWithinSchedule()) {
                 return;
             }
-
-            // Update content
-            this.updateContent();
 
             // Show popup after delay
             setTimeout(() => this.show(), this.config.delaySeconds * 1000);
