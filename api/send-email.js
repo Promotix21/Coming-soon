@@ -238,8 +238,7 @@ export default async function handler(req, res) {
         // Email to Business
         const mailOptions = {
             from: '"Tandoor Website" <noreply@tandoorhayward.com>',
-            // to: 'guptatandoorrestaurant@gmail.com, agent6064@gmail.com',
-            to: 'badalsharma2741@gmail.com',
+            to: 'guptatandoorrestaurant@gmail.com, agent6064@gmail.com',
             subject: mailSubject,
             html: businessHtmlContent,
             replyTo: email
