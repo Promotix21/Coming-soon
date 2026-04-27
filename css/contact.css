@@ -250,6 +250,7 @@
     font-size: 0.95rem;
     text-align: center;
     display: none;
+    margin-top: 15px;
 }
 
 .form-message.success {
@@ -264,6 +265,37 @@
     background: rgba(244, 67, 54, 0.15);
     color: #ef5350;
     border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+/* Validation Errors */
+.error-text {
+    color: #ef5350;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: block;
+    font-family: var(--font-inter);
+}
+
+.form-group input.invalid,
+.form-group textarea.invalid {
+    border-color: #ef5350;
+}
+
+/* Honeypot - stealthy hiding */
+.hp-field {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Recaptcha spacing */
+.g-recaptcha {
+    margin: 15px 0;
 }
 
 /* Responsive */
