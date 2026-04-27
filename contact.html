@@ -156,16 +156,22 @@
                         here to help.</h2>
                 </div>
 
-                <form class="contact-form" id="contact-form" action="https://formspree.io/f/xojyzzaa" method="POST">
+                <form class="contact-form" id="contact-form">
                     <!-- Honeypot field (invisible to users) -->
                     <div class="hp-field">
                         <label>If you are human, leave this blank:</label>
-                        <input type="text" name="_gotcha" id="hp_company">
+                        <input type="text" name="company" id="hp_company">
                     </div>
 
-                    <div class="form-group full-width">
-                        <input type="text" name="name" id="name" placeholder="Full Name*" required>
-                        <span id="name-error" class="error-text"></span>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" name="firstName" id="firstName" placeholder="First Name*" required>
+                            <span id="firstName-error" class="error-text"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="lastName" id="lastName" placeholder="Last Name*" required>
+                            <span id="lastName-error" class="error-text"></span>
+                        </div>
                     </div>
 
                     <div class="form-row">
@@ -188,7 +194,6 @@
                     </div>
 
                     <!-- reCAPTCHA v2 Widget -->
-                    <!-- Replace YOUR_RECAPTCHA_SITE_KEY with your actual site key -->
                     <div class="g-recaptcha" data-sitekey="6LejBs0sAAAAAHtW0lOsXPAVFJEFuZi_vJDZeRGB"></div>
                     <span id="captcha-error" class="error-text"></span>
 
@@ -386,15 +391,23 @@
                 }
 
                 // 4. FRONTEND VALIDATION
-                const nameValue = form.name.value.trim();
+                const firstNameValue = form.firstName.value.trim();
+                const lastNameValue = form.lastName.value.trim();
                 const emailValue = form.email.value.trim();
+                const subjectValue = form.subject.value.trim();
+                const phoneValue = form.phone.value.trim();
                 const messageValue = form.message.value.trim();
                 const captchaResponse = grecaptcha.getResponse();
 
-                // Name Validation (3-50 chars, letters/spaces)
-                if (!/^[a-zA-Z\s]{3,50}$/.test(nameValue)) {
-                    document.getElementById('name-error').textContent = 'Please enter a valid name (3-50 letters).';
-                    form.name.classList.add('invalid');
+                // Name Validation
+                if (!/^[a-zA-Z\s]{2,30}$/.test(firstNameValue)) {
+                    document.getElementById('firstName-error').textContent = 'Invalid First Name.';
+                    form.firstName.classList.add('invalid');
+                    isValid = false;
+                }
+                if (!/^[a-zA-Z\s]{2,30}$/.test(lastNameValue)) {
+                    document.getElementById('lastName-error').textContent = 'Invalid Last Name.';
+                    form.lastName.classList.add('invalid');
                     isValid = false;
                 }
 
@@ -428,28 +441,29 @@
                 submitBtn.disabled = true;
                 submitBtn.textContent = 'Sending...';
 
-                // 5. SANITIZATION BEFORE SENDING
-                const formData = new FormData(form);
-                const sanitizedData = new FormData();
-                
-                formData.forEach((value, key) => {
-                    if (typeof value === 'string' && key !== 'g-recaptcha-response') {
-                        sanitizedData.append(key, escapeHtml(value));
-                    } else {
-                        sanitizedData.append(key, value);
-                    }
-                });
+                // 5. SANITIZATION AND JSON PREPARATION
+                const data = {
+                    firstName: escapeHtml(firstNameValue),
+                    lastName: escapeHtml(lastNameValue),
+                    email: escapeHtml(emailValue),
+                    phone: escapeHtml(phoneValue),
+                    subject: escapeHtml(subjectValue),
+                    message: escapeHtml(messageValue),
+                    'g-recaptcha-response': captchaResponse
+                };
 
                 try {
-                    const response = await fetch(form.action, {
+                    const response = await fetch('/api/send-email', {
                         method: 'POST',
-                        body: sanitizedData, 
                         headers: {
-                            'Accept': 'application/json'
-                        }
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
                     });
 
-                    if (response.ok) {
+                    const result = await response.json();
+
+                    if (response.ok && result.success) {
                         Swal.fire({
                             icon: 'success',
                             title: 'Message Sent!',
@@ -459,8 +473,7 @@
                         form.reset();
                         grecaptcha.reset();
                     } else {
-                        const result = await response.json();
-                        throw new Error(result.errors ? result.errors[0].message : 'Submission failed');
+                        throw new Error(result.message || 'Submission failed');
                     }
                 } catch (error) {
                     console.error('Form submission error:', error);
